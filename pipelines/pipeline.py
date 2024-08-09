@@ -12,7 +12,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 # データを読み込み
-df = pd.read_csv('titanic/train.csv')
+df = pd.read_csv('../csv/train.csv')
 
 # データセットを、訓練用データと検証・評価用データに分割
 (train, valid_test) = train_test_split(df, test_size = 0.3)

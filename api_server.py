@@ -2,11 +2,14 @@ import pickle
 import pandas as pd
 from flask import Flask, request, jsonify
 
-# 自作の特徴量作成処理をimport
+import sys
+parent_dir = './pipelines'
+if parent_dir not in sys.path:
+    sys.path.append(parent_dir)
 from preprocessor import PreProcessor
 
 # ファイルに保存した学習済みパイプラインをロードする
-filename = 'ml_pipeline.pickle'
+filename = './pipelines/ml_pipeline.pickle'
 ml_pipeline = pickle.load(open(filename, 'rb'))
 
 # Flaskサーバを作成
